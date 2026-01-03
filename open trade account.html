@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Trade Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Open Your Trade Account</h1>
+    </header>
+    <main>
+        <form id="trade-account-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="pan">PAN Number:</label>
+            <input type="text" id="pan" name="pan" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="income">Annual Income:</label>
+            <input type="number" id="income" name="income" required>
+
+            <label for="experience">Trading Experience:</label>
+            <select id="experience" name="experience" required>
+                <option value="" disabled selected>Select Experience Level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <label for="years">Trading Years:</label>
+            <select id="years"name="years" required>
+                <option value="" disabled selected>Select Experience years</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>

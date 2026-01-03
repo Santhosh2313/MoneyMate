@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 400px;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Loan Calculator</h2>
+<label for="loanAmount">Loan Amount ($):</label>
+<input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+
+<label for="interestRate">Annual Interest Rate (%):</label>
+<input type="number" id="interestRate" placeholder="Enter interest rate" required>
+
+<label for="loanTerm">Loan Term (years):</label>
+<input type="number" id="loanTerm" placeholder="Enter loan term" required>
+
+<button onclick="calculateLoan()">Calculate Monthly Payment</button>
+
+<h3 id="result"></h3>
+
+<script>
+    function calculateLoan() {
+        const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+        const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly interest rate
+        const loanTerm = parseFloat(document.getElementById('loanTerm').value) * 12; // Total months
+
+        // Monthly payment calculation
+        const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow(1 + interestRate, -loanTerm));
+        
+        // Display result
+        if (!isNaN(monthlyPayment) && (monthlyPayment != Infinity) && (monthlyPayment > 0)) {
+            document.getElementById('result').innerText = `Monthly Payment: $${monthlyPayment.toFixed(2)}`;
+        } else {
+            document.getElementById('result').innerText = 'Please enter valid inputs';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,1 +1,23 @@
+# Normalize all text files
 * text=auto eol=lf
+
+# Explicit web formats
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.php   text eol=lf
+*.json  text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+
+# Prevent line ending changes for binaries
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.svg   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
+*.ico   binary
